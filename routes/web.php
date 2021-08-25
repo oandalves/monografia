@@ -21,4 +21,8 @@ Route::get('/dashboard', function () {
     return view('painel.home');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/dashboard/feiras', function () {
+    return view('painel.fair.index');
+})->middleware(['auth'])->name('dashboard.fair');
+
 require __DIR__.'/auth.php';

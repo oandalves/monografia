@@ -66,21 +66,55 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">Olá, {{ Auth::user()->name }}!</p>
+            <p class="masthead-subheading font-weight-light mb-0">Feiras</p>
         </div>
     </header>
-    <section class="page-section portfolio" id="portfolio">
+    <section class="page-section">
         <div class="container">
-            <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
-                <!-- Portfolio Item 1-->
-                <div class="col-md-3 col-lg-6 mb-5">
-                    <img class="img-fluid w-50" src="{{ asset('website/assets/img/Farmer-amico.svg') }}" alt="..." />
-                </div>
-                <!-- Portfolio Item 2-->
-                <div class="col-md-9 col-lg-6 mb-5">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sapien magna, cursus quis nisi eget, sodales ultricies lectus. Nulla quis sagittis quam. Quisque mauris erat, pharetra ornare purus ultrices, tincidunt molestie lacus. Donec et consectetur leo. Suspendisse a tellus in lectus posuere tempus. Cras eget purus ut lacus rutrum luctus sit amet vel ipsum. Integer quis lectus tellus. Aenean fringilla enim non fringilla venenatis. Aliquam lacinia vehicula libero.</p>
-                </div>
+                <table class="table table-hover caption-top">
+                    <caption>Listagem de feiras</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Data Cadastro</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>
+                                <a href="#" title="Ver detalhes"><i class="far fa-eye"></i></a>
+                                <a href="#" title="Editar"><i class="far fa-edit"></i></a>
+                                <a href="#" title="Excluir"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>
+                                <a href="#" title="Ver detalhes"><i class="far fa-eye"></i></a>
+                                <a href="#" title="Editar"><i class="far fa-edit"></i></a>
+                                <a href="#" title="Excluir"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>
+                                <a href="#" title="Ver detalhes"><i class="far fa-eye"></i></a>
+                                <a href="#" title="Editar"><i class="far fa-edit"></i></a>
+                                <a href="#" title="Excluir"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
