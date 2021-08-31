@@ -67,31 +67,24 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">Feiras</p>
+            <p class="masthead-subheading font-weight-light mb-0">Categorias</p>
         </div>
     </header>
     <section class="page-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-9">Listagem de feiras</div>
-                <div class="col-md-3">
-                    <button type="button" class="btn btn-primary">Adicionar</button>
-                </div>
-            </div>
-            <div class="row justify-content-center">
                 <table class="table table-hover caption-top">
+                    <caption>Listagem de categorias</caption>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nome</th>
-                            <th scope="col">Data Cadastro</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
                             <td>Otto</td>
                             <td>
                                 <a href="#" title="Ver detalhes" class="acoes"><i class="far fa-eye"></i></a>
@@ -101,7 +94,6 @@
                         </tr>
                         <tr>
                             <th scope="row">2</th>
-                            <td>Jacob</td>
                             <td>Thornton</td>
                             <td>
                                 <a href="#" title="Ver detalhes" class="acoes"><i class="far fa-eye"></i></a>
@@ -111,7 +103,6 @@
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Jacob</td>
                             <td>Thornton</td>
                             <td>
                                 <a href="#" title="Ver detalhes" class="acoes"><i class="far fa-eye"></i></a>

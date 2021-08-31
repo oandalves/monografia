@@ -67,19 +67,14 @@
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
             <!-- Masthead Subheading-->
-            <p class="masthead-subheading font-weight-light mb-0">Feiras</p>
+            <p class="masthead-subheading font-weight-light mb-0">Feirantes</p>
         </div>
     </header>
     <section class="page-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-9">Listagem de feiras</div>
-                <div class="col-md-3">
-                    <button type="button" class="btn btn-primary">Adicionar</button>
-                </div>
-            </div>
-            <div class="row justify-content-center">
                 <table class="table table-hover caption-top">
+                    <caption>Listagem de feirantes</caption>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
