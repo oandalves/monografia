@@ -247,44 +247,54 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Associações',
-            'url'         => 'painel/associacoes',
-            'icon'        => 'far fa-fw fa-file',
-            'label_color' => 'success',
+            'text'    => 'Associações',
+            'icon'    => 'fas fa-fw fa-sitemap',
+            'submenu' => [
+                [
+                    'text' => 'Ver todas',
+                    'url'  => 'painel/associacoes',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => '#',
+                    'label_color' => 'success',
+                ],
+            ],
         ],
         [
             'text'        => 'Feiras',
             'url'         => 'painel/feiras',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-store',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Certificações',
             'url'         => 'painel/certificacoes',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-award',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Feirantes',
             'url'         => 'painel/feirantes',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'far fa-fw fa-user-circle',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Categorias',
             'url'         => 'painel/categorias',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-columns',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Produtos',
             'url'         => 'painel/produtos',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-carrot',
             'label_color' => 'success',
         ],
         [
             'text'    => 'Relatórios',
-            'icon'    => 'far fa-fw fa-file',
+            'icon'    => 'fas fa-fw fa-chart-bar',
             'submenu' => [
                 [
                     'text' => 'Feiras',
@@ -295,7 +305,7 @@ return [
         [
             'text'        => 'Usuários',
             'url'         => 'painel/usuarios',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fas fa-fw fa-users',
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
