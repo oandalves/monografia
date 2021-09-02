@@ -17,28 +17,40 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
+Route::get('/painel', function () {
     return view('painel.home');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])->name('painel');
 
-Route::get('/dashboard/feiras', function () {
+Route::get('/painel/associacoes', function () {
+    return view('painel.organization.index');
+})->middleware(['auth'])->name('painel.associacoes');
+
+Route::get('/painel/feiras', function () {
     return view('painel.fair.index');
-})->middleware(['auth'])->name('dashboard.fair');
+})->middleware(['auth'])->name('painel.feiras');
 
-Route::get('/dashboard/feirantes', function () {
+Route::get('/painel/certificacoes', function () {
+    return view('painel.certification.index');
+})->middleware(['auth'])->name('painel.certificacoes');
+
+Route::get('/painel/feirantes', function () {
     return view('painel.marketer.index');
-})->middleware(['auth'])->name('dashboard.marketer');
+})->middleware(['auth'])->name('painel.feirantes');
 
-Route::get('/dashboard/categorias', function () {
+Route::get('/painel/categorias', function () {
     return view('painel.category.index');
-})->middleware(['auth'])->name('dashboard.category');
+})->middleware(['auth'])->name('painel.categorias');
 
-Route::get('/dashboard/produtos', function () {
+Route::get('/painel/produtos', function () {
     return view('painel.product.index');
-})->middleware(['auth'])->name('dashboard.product');
+})->middleware(['auth'])->name('painel.produtos');
 
-Route::get('/dashboard/usuarios', function () {
+Route::get('/painel/usuarios', function () {
     return view('painel.user.index');
-})->middleware(['auth'])->name('dashboard.user');
+})->middleware(['auth'])->name('painel.usuarios');
+
+Route::get('/painel/perfil', function () {
+    return view('painel.profile.index');
+})->middleware(['auth'])->name('painel.perfil');
 
 require __DIR__.'/auth.php';
