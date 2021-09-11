@@ -264,33 +264,83 @@ return [
         ],
         [
             'text'        => 'Feiras',
-            'url'         => 'painel/feiras',
             'icon'        => 'fas fa-fw fa-store',
-            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Ver todas',
+                    'url'         => 'painel/feiras',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => '#',
+                    'label_color' => 'success',
+                ],
+            ],
         ],
         [
             'text'        => 'Certificações',
-            'url'         => 'painel/certificacoes',
             'icon'        => 'fas fa-fw fa-award',
-            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Ver todas',
+                    'url'         => 'painel/certificacoes',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => '#',
+                    'label_color' => 'success',
+                ],
+            ],
         ],
         [
             'text'        => 'Feirantes',
-            'url'         => 'painel/feirantes',
             'icon'        => 'far fa-fw fa-user-circle',
-            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Ver todas',
+                    'url'         => 'painel/feirantes',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => '#',
+                    'label_color' => 'success',
+                ],
+            ],
         ],
         [
             'text'        => 'Categorias',
-            'url'         => 'painel/categorias',
             'icon'        => 'fas fa-fw fa-columns',
-            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Ver todas',
+                    'url'         => 'painel/categorias',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => '#',
+                    'label_color' => 'success',
+                ],
+            ],
         ],
         [
             'text'        => 'Produtos',
-            'url'         => 'painel/produtos',
             'icon'        => 'fas fa-fw fa-carrot',
-            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Ver todas',
+                    'url'         => 'painel/produtos',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => '#',
+                    'label_color' => 'success',
+                ],
+            ],
         ],
         [
             'text'    => 'Relatórios',
@@ -308,7 +358,7 @@ return [
             'icon'        => 'fas fa-fw fa-users',
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Configurações de conta'],
         [
             'text' => 'Perfil',
             'url'  => 'painel/perfil',
