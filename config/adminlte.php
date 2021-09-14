@@ -273,7 +273,7 @@ return [
                 ],
                 [
                     'text' => 'Cadastrar',
-                    'url'  => '#',
+                    'url'  => 'painel/feiras/novo',
                     'label_color' => 'success',
                 ],
             ],

@@ -1,56 +1,69 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    FairController
+};
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/painel', function () {
-    return view('painel.home');
-})->middleware(['auth'])->name('painel');
+Route::middleware(['auth'])->group(function() {
+    Route::prefix('painel')->group(function() {
+        Route::name('painel.')->group(function() {
+            Route::get('/', function () {
+                return view('painel.home');
+            })->name('index');
+            
+            Route::prefix('associacoes')->group(function() {
+                Route::name('associacoes.')->group(function() {
+                    Route::get('/', function () {
+                        return view('painel.organization.index');
+                    })->name('index');
+                    Route::get('/novo', function () {
+                        return view('painel.organization.novo');
+                    })->name('novo');
+                    Route::get('/editar', function () {
+                        return view('painel.organization.editar');
+                    })->name('editar');
+                    Route::get('/visualizar', function () {
+                        return view('painel.organization.visualizar');
+                    })->name('visualizar');
+                });
+            });
 
-Route::get('/painel/associacoes', function () {
-    return view('painel.organization.index');
-})->middleware(['auth'])->name('painel.associacoes');
+            Route::get('/feiras', [FairController::class, 'index'])->name('feiras.index');
+            Route::get('/feiras/novo', [FairController::class, 'create'])->name('feiras.novo');
+            
+            Route::get('/certificacoes', function () {
+                return view('painel.certification.index');
+            })->name('certificacoes');
+            
+            Route::get('/feirantes', function () {
+                return view('painel.marketer.index');
+            })->name('feirantes');
+            
+            Route::get('/categorias', function () {
+                return view('painel.category.index');
+            })->name('.categorias');
+            
+            Route::get('/produtos', function () {
+                return view('painel.product.index');
+            })->name('produtos');
+            
+            Route::get('/usuarios', function () {
+                return view('painel.user.index');
+            })->name('usuarios');
+            
+            Route::get('/perfil', function () {
+                return view('painel.profile.index');
+            })->name('perfil');
+        });
+    });
+});
 
-Route::get('/painel/feiras', function () {
-    return view('painel.fair.index');
-})->middleware(['auth'])->name('painel.feiras');
 
-Route::get('/painel/certificacoes', function () {
-    return view('painel.certification.index');
-})->middleware(['auth'])->name('painel.certificacoes');
-
-Route::get('/painel/feirantes', function () {
-    return view('painel.marketer.index');
-})->middleware(['auth'])->name('painel.feirantes');
-
-Route::get('/painel/categorias', function () {
-    return view('painel.category.index');
-})->middleware(['auth'])->name('painel.categorias');
-
-Route::get('/painel/produtos', function () {
-    return view('painel.product.index');
-})->middleware(['auth'])->name('painel.produtos');
-
-Route::get('/painel/usuarios', function () {
-    return view('painel.user.index');
-})->middleware(['auth'])->name('painel.usuarios');
-
-Route::get('/painel/perfil', function () {
-    return view('painel.profile.index');
-})->middleware(['auth'])->name('painel.perfil');
 
 require __DIR__.'/auth.php';
