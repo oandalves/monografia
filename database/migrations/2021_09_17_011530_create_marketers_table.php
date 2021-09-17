@@ -17,16 +17,26 @@ class CreateMarketersTable extends Migration
             $table->increments('id');
             $table->string('telefone');
             $table->string('sexo');
-            $table->string('endereco');
+            $table->string('local');
             $table->string('cidade');
             $table->string('uf');
             $table->string('manejo');
             $table->string('certificacao');
             $table->string('selo');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->integer('fair_id')->unsigned();
-            $table->foreign('fair_id')->references('id')->on('fairs')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('user_id')
+                ->unsigned();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->integer('fair_id')
+                ->unsigned();
+            $table->foreign('fair_id')
+                ->references('id')
+                ->on('fairs')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

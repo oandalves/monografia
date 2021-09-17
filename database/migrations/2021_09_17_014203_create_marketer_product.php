@@ -14,13 +14,22 @@ class CreateMarketerProduct extends Migration
     public function up()
     {
         Schema::create('marketer_product', function (Blueprint $table) {
-            $table->foreignId('marketer_id')->constrained();
-            $table->foreignId('product_id')->constrained();
             $table->integer('number');
-            $table->string('unit', 15);
+            $table->string('unit');
             $table->double('amount', 8, 2);
-            $table->string('image', 250);
-            $table->string('months', 250);
+            $table->string('months');
+            $table->integer('marketer_id')
+                ->unsigned();
+            $table->foreign('marketer_id')
+                ->references('id')
+                ->on('marketers')
+                ->onUpdate('cascade');
+            $table->integer('product_id')
+                ->unsigned();
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

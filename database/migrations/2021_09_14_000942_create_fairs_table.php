@@ -15,9 +15,9 @@ class CreateFairsTable extends Migration
     {
         Schema::create('fairs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('description');
-            $table->string('day');
+            $table->string('nome');
+            $table->text('descricao');
+            $table->string('dia');
             $table->string('horario');
             $table->string('periodicidade');
             $table->string('latitude');
@@ -28,8 +28,12 @@ class CreateFairsTable extends Migration
             $table->string('telefone');
             $table->string('email');
             $table->string('link');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('user_id')
+                ->unsigned();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }
