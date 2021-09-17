@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFairsTable extends Migration
+class CreateMarketersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,20 @@ class CreateFairsTable extends Migration
      */
     public function up()
     {
-        Schema::create('fairs', function (Blueprint $table) {
+        Schema::create('marketers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('description');
-            $table->string('day');
-            $table->string('horario');
-            $table->string('periodicidade');
-            $table->string('latitude');
-            $table->string('longitude');
-            $table->string('local');
+            $table->string('telefone');
+            $table->string('sexo');
+            $table->string('endereco');
             $table->string('cidade');
             $table->string('uf');
-            $table->string('telefone');
-            $table->string('email');
-            $table->string('link');
+            $table->string('manejo');
+            $table->string('certificacao');
+            $table->string('selo');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('fair_id')->unsigned();
+            $table->foreign('fair_id')->references('id')->on('fairs')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -41,6 +38,6 @@ class CreateFairsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fairs');
+        Schema::dropIfExists('marketers');
     }
 }
