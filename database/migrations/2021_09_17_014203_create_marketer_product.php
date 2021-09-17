@@ -14,10 +14,10 @@ class CreateMarketerProduct extends Migration
     public function up()
     {
         Schema::create('marketer_product', function (Blueprint $table) {
-            $table->integer('number');
-            $table->string('unit');
-            $table->double('amount', 8, 2);
-            $table->string('months');
+            $table->integer('quantidade');
+            $table->string('unidade');
+            $table->double('preco', 8, 2);
+            $table->string('meses');
             $table->integer('marketer_id')
                 ->unsigned();
             $table->foreign('marketer_id')
