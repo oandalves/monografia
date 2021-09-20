@@ -11,35 +11,28 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function() {
-    Route::prefix('painel')->group(function() {
+    Route::prefix('/painel')->group(function() {
         Route::name('painel.')->group(function() {
-            Route::get('/', function () {
-                return view('painel.home');
-            })->name('index');
-            
-            Route::prefix('associacoes')->group(function() {
-                Route::name('associacoes.')->group(function() {
-                    Route::get('/', function () {
-                        return view('painel.organization.index');
-                    })->name('index');
-                    Route::get('/novo', function () {
-                        return view('painel.organization.novo');
-                    })->name('novo');
-                    Route::get('/editar', function () {
-                        return view('painel.organization.editar');
-                    })->name('editar');
-                    Route::get('/visualizar', function () {
-                        return view('painel.organization.visualizar');
-                    })->name('visualizar');
+
+            Route::prefix('/feiras')->group(function() {
+                Route::name('feiras.')->group(function() {
+                    Route::get('/', [FairController::class, 'index'])->name('index');
+                    Route::get('/novo', [FairController::class, 'create'])->name('create');
+                    Route::post('/salvar', [FairController::class, 'store'])->name('store');
+                    Route::get('/visualiza/{id}', [FairController::class, 'show'])->name('show');
+                    Route::delete('/excluir/{id}', [FairController::class, 'destroy'])->name('destroy');
+                    Route::get('/edita/{id}', [FairController::class, 'edit'])->name('edit');
+                    Route::put('/atualizar/{id}', [FairController::class, 'update'])->name('update');
+                    Route::post('/pesquisar', [FairController::class, 'search'])->name('search');
                 });
             });
 
-            Route::get('/feiras', [FairController::class, 'index'])->name('feiras.index');
-            Route::get('/feiras/novo', [FairController::class, 'create'])->name('feiras.novo');
-            
-            Route::get('/certificacoes', function () {
-                return view('painel.certification.index');
-            })->name('certificacoes');
+
+
+            Route::get('/', function () {
+                return view('painel.home');
+            })->name('index');
+                        
             
             Route::get('/feirantes', function () {
                 return view('painel.marketer.index');
