@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'painel',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -238,10 +238,6 @@ return [
 
         // Sidebar items:
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
@@ -289,7 +285,7 @@ return [
                 ],
                 [
                     'text' => 'Cadastrar',
-                    'url'  => '#',
+                    'url'  => 'painel/categorias/novo',
                     'label_color' => 'success',
                 ],
             ],
@@ -305,7 +301,7 @@ return [
                 ],
                 [
                     'text' => 'Cadastrar',
-                    'url'  => '#',
+                    'url'  => 'painel/produtos/novo',
                     'label_color' => 'success',
                 ],
             ],

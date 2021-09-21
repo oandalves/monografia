@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    CategoryController,
     FairController,
-    MarketerController
+    MarketerController,
+    ProductController
 };
 
 
@@ -41,24 +43,35 @@ Route::middleware(['auth'])->group(function() {
                 });
             });
 
+            Route::prefix('/categorias')->group(function() {
+                Route::name('categorias.')->group(function() {
+                    Route::get('/', [CategoryController::class, 'index'])->name('index');
+                    Route::get('/novo', [CategoryController::class, 'create'])->name('create');
+                    Route::post('/salvar', [CategoryController::class, 'store'])->name('store');
+                    Route::get('/visualiza/{id}', [CategoryController::class, 'show'])->name('show');
+                    Route::delete('/excluir/{id}', [CategoryController::class, 'destroy'])->name('destroy');
+                    Route::get('/edita/{id}', [CategoryController::class, 'edit'])->name('edit');
+                    Route::put('/atualizar/{id}', [CategoryController::class, 'update'])->name('update');
+                    Route::post('/pesquisar', [CategoryController::class, 'search'])->name('search');
+                });
+            });
 
+            Route::prefix('/produtos')->group(function() {
+                Route::name('produtos.')->group(function() {
+                    Route::get('/', [ProductController::class, 'index'])->name('index');
+                    Route::get('/novo', [ProductController::class, 'create'])->name('create');
+                    Route::post('/salvar', [ProductController::class, 'store'])->name('store');
+                    Route::get('/visualiza/{id}', [ProductController::class, 'show'])->name('show');
+                    Route::delete('/excluir/{id}', [ProductController::class, 'destroy'])->name('destroy');
+                    Route::get('/edita/{id}', [ProductController::class, 'edit'])->name('edit');
+                    Route::put('/atualizar/{id}', [ProductController::class, 'update'])->name('update');
+                    Route::post('/pesquisar', [ProductController::class, 'search'])->name('search');
+                });
+            });
 
             Route::get('/', function () {
                 return view('painel.home');
             })->name('index');
-                        
-            
-            Route::get('/feirantes', function () {
-                return view('painel.marketer.index');
-            })->name('feirantes');
-            
-            Route::get('/categorias', function () {
-                return view('painel.category.index');
-            })->name('.categorias');
-            
-            Route::get('/produtos', function () {
-                return view('painel.product.index');
-            })->name('produtos');
             
             Route::get('/usuarios', function () {
                 return view('painel.user.index');
