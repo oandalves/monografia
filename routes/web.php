@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
-    FairController
+    FairController,
+    MarketerController
 };
 
 
@@ -24,6 +25,19 @@ Route::middleware(['auth'])->group(function() {
                     Route::get('/edita/{id}', [FairController::class, 'edit'])->name('edit');
                     Route::put('/atualizar/{id}', [FairController::class, 'update'])->name('update');
                     Route::post('/pesquisar', [FairController::class, 'search'])->name('search');
+                });
+            });
+
+            Route::prefix('/feirantes')->group(function() {
+                Route::name('feirantes.')->group(function() {
+                    Route::get('/', [MarketerController::class, 'index'])->name('index');
+                    Route::get('/novo', [MarketerController::class, 'create'])->name('create');
+                    Route::post('/salvar', [MarketerController::class, 'store'])->name('store');
+                    Route::get('/visualiza/{id}', [MarketerController::class, 'show'])->name('show');
+                    Route::delete('/excluir/{id}', [MarketerController::class, 'destroy'])->name('destroy');
+                    Route::get('/edita/{id}', [MarketerController::class, 'edit'])->name('edit');
+                    Route::put('/atualizar/{id}', [MarketerController::class, 'update'])->name('update');
+                    Route::post('/pesquisar', [MarketerController::class, 'search'])->name('search');
                 });
             });
 

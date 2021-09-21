@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Organinicum',
+    'title' => 'Organicum',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -247,22 +247,6 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'    => 'Associações',
-            'icon'    => 'fas fa-fw fa-sitemap',
-            'submenu' => [
-                [
-                    'text' => 'Ver todas',
-                    'url'  => 'painel/associacoes',
-                    'label_color' => 'success',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'url'  => '#',
-                    'label_color' => 'success',
-                ],
-            ],
-        ],
-        [
             'text'        => 'Feiras',
             'icon'        => 'fas fa-fw fa-store',
             'submenu' => [
@@ -279,22 +263,6 @@ return [
             ],
         ],
         [
-            'text'        => 'Certificações',
-            'icon'        => 'fas fa-fw fa-award',
-            'submenu' => [
-                [
-                    'text' => 'Ver todas',
-                    'url'         => 'painel/certificacoes',
-                    'label_color' => 'success',
-                ],
-                [
-                    'text' => 'Cadastrar',
-                    'url'  => '#',
-                    'label_color' => 'success',
-                ],
-            ],
-        ],
-        [
             'text'        => 'Feirantes',
             'icon'        => 'far fa-fw fa-user-circle',
             'submenu' => [
@@ -305,7 +273,7 @@ return [
                 ],
                 [
                     'text' => 'Cadastrar',
-                    'url'  => '#',
+                    'url'  => 'painel/feirantes/novo',
                     'label_color' => 'success',
                 ],
             ],
