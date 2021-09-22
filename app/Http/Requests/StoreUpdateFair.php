@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreUpdateFair extends FormRequest
 {
@@ -23,8 +24,18 @@ class StoreUpdateFair extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        $rules = [
+            'nome' => [
+                'required',
+                'min:10',
+                'max:250',
+            ],
+            'text' => [
+                'required',
+                'min:100',
+            ],
         ];
+
+        return $rules;
     }
 }

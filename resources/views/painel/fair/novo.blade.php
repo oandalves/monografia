@@ -15,13 +15,6 @@
                     <div class="card-header">
                         <h3 class="card-title">Cadastrar nova feira</h3>
                     </div>
-                    @if ($erros->any())
-                        <ul>
-                            @foreach ($erros->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
                     <form action="{{ route('painel.feiras.store') }}" method="post">
                         @csrf
                         <div class="card-body">
@@ -29,7 +22,9 @@
                                 <label>Usuário responsável</label>
                                 <select class="custom-select rounded-0" name="user_id">
                                     <option>Selecione</option>
-                                    <option value="1">Teste</option>
+                                    @foreach($users as $user)
+                                        <option value="{{$user->id}}">{{$user->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
@@ -40,7 +35,7 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Dia da semana</label>
-                                        <select class="custom-select rounded-0" name="periodicidade">
+                                        <select class="custom-select rounded-0" name="dia">
                                             <option>Selecione</option>
                                             <option value="Segunda-feira">Segunda-feira</option>
                                             <option value="Terça-feira">Terça-feira</option>

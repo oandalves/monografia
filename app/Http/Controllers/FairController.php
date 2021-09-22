@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUpdateFair;
 use Illuminate\Http\Request;
 use App\Models\Fair;
+use App\Models\User;
 
 class FairController extends Controller
 {
@@ -15,10 +16,11 @@ class FairController extends Controller
     }
 
     public function create() {
-        return view('painel.fair.novo');
+        $users = User::get();
+        return view('painel.fair.novo', compact('users'));
     }
 
-    public function store(StoreUpdateFair $request) {
+    public function store(Request $request) {
         //dd($request->all());
         Fair::create($request->all());
         return redirect()->route('painel.feiras.index');

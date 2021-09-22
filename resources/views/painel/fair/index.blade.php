@@ -22,6 +22,9 @@
                                     <tr>
                                         <th style="width: 10px">#</th>
                                         <th>Nome</th>
+                                        <th>Responsável</th>
+                                        <th>Cidade/UF</th>
+                                        <th>Data/Hora cadastro</th>
                                         <th>Ação</th>
                                     </tr>
                                 </thead>
@@ -29,9 +32,10 @@
                                     @foreach($fairs as $fair)
                                     <tr>
                                         <td>{{ $fair->id }}.</td>
-                                        <td>
-                                            {{ $fair->nome }}
-                                        </td>
+                                        <td>{{ $fair->nome }}</td>
+                                        <td>{{ $fair->user->name }}</td>
+                                        <td>{{ $fair->cidade }}/{{ $fair->uf }}</td>
+                                        <td>{{ $fair->created_at }}</td>
                                         <td><a href="" title="Visualizar"><i class="far fa-eye"></i></a>
                                             <a href="" title="Editar"><i class="far fa-edit"></i></a>
                                             <a href="" title="Excluir"><i class="far fa-trash-alt"></i></a>
