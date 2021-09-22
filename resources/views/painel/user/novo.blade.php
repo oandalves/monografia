@@ -17,8 +17,8 @@
                         </div>
                         <auth-validation-errors class="mb-4" :errors="$errors" />
 
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
+                        <form action="{{ route('painel.usuarios.store') }}" method="post">
+                        @csrf
                             <div class="card-body">
                             <div class="form-group">
                                 <label>Nome</label>

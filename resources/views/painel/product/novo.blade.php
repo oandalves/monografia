@@ -15,13 +15,14 @@
                     <div class="card-header">
                         <h3 class="card-title">Cadastrar novo produto</h3>
                     </div>
-                    <form action="{{ route('painel.categorias.store') }}" method="post">
+                    <form action="{{ route('painel.produtos.store') }}" method="post">
+                        @csrf
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Categoria</label>
                                 <select class="custom-select rounded-0" name="categoria">
                                     <option>Selecione</option>
-                                    <option value=""></option>
+                                    <option value="1">Teste</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -30,7 +31,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Imagem</label>
-                                <input type="text" name="descricao" class="form-control" placeholder="Descrição" maxlength="255">
+                                <input type="text" name="imagem" class="form-control" placeholder="Descrição" maxlength="255">
                             </div>
                             <x-adminlte-button class="btn-flat" type="submit" label="Salvar" theme="success" icon="fas fa-lg fa-save" />
                         </div>

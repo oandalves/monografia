@@ -26,8 +26,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
-                            </tbody>
+                                    @foreach($marketers as $marketer)
+                                    <tr>
+                                        <td>{{ $marketer->id }}.</td>
+                                        <td>
+                                            {{ $marketer->user->name }}
+                                        </td>
+                                        <td><a href="" title="Visualizar"><i class="far fa-eye"></i></a>
+                                            <a href="" title="Editar"><i class="far fa-edit"></i></a>
+                                            <a href="" title="Excluir"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
                         </table>
                     </div>
                 </div>

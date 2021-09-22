@@ -16,6 +16,7 @@
                             <h3 class="card-title">Cadastrar nova categoria</h3>
                         </div>
                         <form action="{{ route('painel.categorias.store') }}" method="post">
+                        @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Nome</label>

@@ -15,20 +15,21 @@
                     <div class="card-header">
                         <h3 class="card-title">Cadastrar novo feirante</h3>
                     </div>
-                    <form action="" method="post">
+                    <form action="{{ route('painel.feirantes.store') }}" method="post">
+                        @csrf
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Escolha o usuário</label>
                                 <select class="custom-select rounded-0" name="user_id">
                                     <option>Selecione</option>
-                                    <option value=""></option>
+                                    <option value="1">Usuario</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Vincular a feira</label>
                                 <select class="custom-select rounded-0" name="fair_id">
                                     <option>Selecione</option>
-                                    <option value=""></option>
+                                    <option value="1">Feira</option>
                                 </select>
                             </div>
                             <div class="row">
@@ -90,6 +91,7 @@
                                     <div class="form-group">
                                         <label>UF</label>
                                         <select class="custom-select rounded-0" name="uf">
+                                            <option>Selecione</option>
                                             <option value="AC">Acre</option>
                                             <option value="AL">Alagoas</option>
                                             <option value="AP">Amapá</option>

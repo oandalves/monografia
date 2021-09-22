@@ -16,4 +16,9 @@ class MarketerController extends Controller
     public function create() {
         return view('painel.marketer.novo');
     }
+
+    public function store(Request $request) {
+        Marketer::create($request->all());
+        return redirect()->route('painel.feirantes.index');
+    }
 }

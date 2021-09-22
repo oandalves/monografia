@@ -9,6 +9,10 @@ class Marketer extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'telefone', 'sexo', 'local', 'cidade', 'uf', 'manejo', 'certificacao', 'selo', 'user_id', 'fair_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

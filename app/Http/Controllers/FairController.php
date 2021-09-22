@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateFair;
 use Illuminate\Http\Request;
 use App\Models\Fair;
 
 class FairController extends Controller
 {
     public function index() {
-        $fairs = Fair::orderBY('nome', 'ASC')
+        $fairs = Fair::orderBY('id', 'ASC')
                         ->paginate(10);
         return view('painel.fair.index', compact('fairs'));
     }
@@ -17,8 +18,9 @@ class FairController extends Controller
         return view('painel.fair.novo');
     }
 
-    public function store(Request $request) {
-        $data = $request->all();
-        dd($data);
+    public function store(StoreUpdateFair $request) {
+        //dd($request->all());
+        Fair::create($request->all());
+        return redirect()->route('painel.feiras.index');
     }
 }

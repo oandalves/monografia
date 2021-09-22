@@ -9,6 +9,10 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome', 'imagem', 'quantidade', 'unidade', 'preco', 'meses', 'marketer_id', 'product_id'
+    ];
+
     public function marketers()
     {
         return $this->belongsToMany(Marketer::class, 'marketer_product');
