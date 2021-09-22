@@ -317,10 +317,20 @@ return [
             ],
         ],
         [
-            'text'        => 'Usuários',
-            'url'         => 'painel/usuarios',
+            'text'        => 'Usuarios',
             'icon'        => 'fas fa-fw fa-users',
-            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Ver todas',
+                    'url'         => 'painel/usuarios',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => 'painel/usuarios/novo',
+                    'label_color' => 'success',
+                ],
+            ],
         ],
         ['header' => 'Configurações de conta'],
         [

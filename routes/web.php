@@ -5,7 +5,8 @@ use App\Http\Controllers\{
     CategoryController,
     FairController,
     MarketerController,
-    ProductController
+    ProductController,
+    UserController
 };
 
 
@@ -73,9 +74,18 @@ Route::middleware(['auth'])->group(function() {
                 return view('painel.home');
             })->name('index');
             
-            Route::get('/usuarios', function () {
-                return view('painel.user.index');
-            })->name('usuarios');
+            Route::prefix('/usuarios')->group(function() {
+                Route::name('usuarios.')->group(function() {
+                    Route::get('/', [UserController::class, 'index'])->name('index');
+                    Route::get('/novo', [UserController::class, 'create'])->name('create');
+                    Route::post('/salvar', [UserController::class, 'store'])->name('store');
+                    Route::get('/visualiza/{id}', [UserController::class, 'show'])->name('show');
+                    Route::delete('/excluir/{id}', [UserController::class, 'destroy'])->name('destroy');
+                    Route::get('/edita/{id}', [UserController::class, 'edit'])->name('edit');
+                    Route::put('/atualizar/{id}', [UserController::class, 'update'])->name('update');
+                    Route::post('/pesquisar', [UserController::class, 'search'])->name('search');
+                });
+            });
             
             Route::get('/perfil', function () {
                 return view('painel.profile.index');
