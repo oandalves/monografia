@@ -19,9 +19,22 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('type');
             $table->rememberToken();
             $table->timestamps();
         });
+
+        $data = array(
+            array(
+                'name' => 'Administrador',
+                'email' => 'admin@organicum.com.br',
+                'type' => 'admin',
+                'password' => bcrypt('organicum'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            )
+        );
+        \DB::table('users')->insert($data);
     }
 
     /**

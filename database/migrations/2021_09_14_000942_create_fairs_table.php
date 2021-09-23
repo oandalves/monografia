@@ -15,6 +15,7 @@ class CreateFairsTable extends Migration
     {
         Schema::create('fairs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('imagem');
             $table->string('nome');
             $table->text('descricao');
             $table->string('dia');

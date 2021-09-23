@@ -22,14 +22,18 @@
                                 <label>Escolha o usuário</label>
                                 <select class="custom-select rounded-0" name="user_id">
                                     <option>Selecione</option>
-                                    <option value="1">Usuario</option>
+                                    @foreach($users as $user)
+                                        <option value="{{$user->id}}">{{$user->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>Vincular a feira</label>
                                 <select class="custom-select rounded-0" name="fair_id">
                                     <option>Selecione</option>
-                                    <option value="1">Feira</option>
+                                    @foreach($fairs as $fair)
+                                        <option value="{{$fair->id}}">{{$fair->nome}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="row">

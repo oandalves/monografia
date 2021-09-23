@@ -22,6 +22,9 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Nome</th>
+                                    <th>Cidade/UF</th>
+                                    <th>Feira vinculada</th>
+                                    <th>Cadastrado</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
@@ -29,9 +32,10 @@
                                     @foreach($marketers as $marketer)
                                     <tr>
                                         <td>{{ $marketer->id }}.</td>
-                                        <td>
-                                            {{ $marketer->user->name }}
-                                        </td>
+                                        <td>{{ $marketer->user->name }}</td>
+                                        <td>{{ $marketer->cidade }}/{{ $marketer->uf }}</td>
+                                        <td>{{ $marketer->fair->nome }}</td>
+                                        <td>{{ $marketer->created_at}}</td>
                                         <td><a href="" title="Visualizar"><i class="far fa-eye"></i></a>
                                             <a href="" title="Editar"><i class="far fa-edit"></i></a>
                                             <a href="" title="Excluir"><i class="far fa-trash-alt"></i></a>

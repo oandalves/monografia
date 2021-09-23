@@ -22,7 +22,10 @@
                                 <label>Categoria</label>
                                 <select class="custom-select rounded-0" name="categoria">
                                     <option>Selecione</option>
-                                    <option value="1">Teste</option>
+                                    @foreach($categories as $category)
+                                    <option value="{{ $category->id}}">{{ $category->nome }}</option>
+                                    @endforeach
+                                    
                                 </select>
                             </div>
                             <div class="form-group">

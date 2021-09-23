@@ -18,6 +18,11 @@ class Marketer extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function fair()
+    {
+        return $this->belongsTo(Fair::class);
+    }
+
     public function products()
     {
         return $this->belongsToMany(Product::class, 'marketer_product');

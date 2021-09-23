@@ -17,6 +17,12 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('imagem');
+            $table->integer('category_id')
+                ->unsigned();
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

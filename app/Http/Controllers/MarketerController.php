@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fair;
 use App\Models\Marketer;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MarketerController extends Controller
@@ -14,7 +16,9 @@ class MarketerController extends Controller
     }
 
     public function create() {
-        return view('painel.marketer.novo');
+        $users = User::get();
+        $fairs = Fair::get();
+        return view('painel.marketer.novo', compact('users', 'fairs'));
     }
 
     public function store(Request $request) {

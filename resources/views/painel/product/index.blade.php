@@ -22,6 +22,8 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Nome</th>
+                                    <th>Categoria</th>
+                                    <th>Cadastrado</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
@@ -29,9 +31,9 @@
                                     @foreach($products as $products)
                                     <tr>
                                         <td>{{ $products->id }}.</td>
-                                        <td>
-                                            {{ $products->nome }}
-                                        </td>
+                                        <td>{{ $products->nome }}</td>
+                                        <td>{{ $products->categories->nome }}</td>
+                                        <td>{{ $products->created_at }}</td>
                                         <td><a href="" title="Visualizar"><i class="far fa-eye"></i></a>
                                             <a href="" title="Editar"><i class="far fa-edit"></i></a>
                                             <a href="" title="Excluir"><i class="far fa-trash-alt"></i></a>
