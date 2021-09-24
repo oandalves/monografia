@@ -37,8 +37,18 @@
                             </div>
                             <div class="form-group">
                                 <label>Confirmar senha</label>
-                                <input type="password_confirmation" class="form-control" name="password_confirmation" placeholder="Confirme a senha"
+                                <input type="password" class="form-control" name="password_confirmation" placeholder="Confirme a senha"
                                     :value="old('password_confirmation')">
+                            </div>
+                            <div class="form-group">
+                                <label>Tipo usuário</label>
+                                <select class="custom-select rounded-0" name="type">
+                                    <option>Selecione</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="fair">Responsável por gerenciar feira</option>
+                                    <option value="marketer">Feirante</option>
+                                    <option value="user">Usuário</option>
+                                </select>
                             </div>
 
                             <div class="flex items-center justify-end mt-4">

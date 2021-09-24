@@ -22,6 +22,9 @@
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Nome</th>
+                                    <th>Email</th>
+                                    <th>Tipo</th>
+                                    <th>Cadastro</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
@@ -29,9 +32,10 @@
                                     @foreach($users as $user)
                                     <tr>
                                         <td>{{ $user->id }}.</td>
-                                        <td>
-                                            {{ $user->name }}
-                                        </td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->type }}</td>
+                                        <td>{{ $user->created_at }}</td>
                                         <td><a href="" title="Visualizar"><i class="far fa-eye"></i></a>
                                             <a href="" title="Editar"><i class="far fa-edit"></i></a>
                                             <a href="" title="Excluir"><i class="far fa-trash-alt"></i></a>
