@@ -10,7 +10,7 @@ class Marketer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'telefone', 'sexo', 'local', 'cidade', 'uf', 'manejo', 'certificacao', 'selo', 'user_id', 'fair_id'
+        'telefone', 'sexo', 'local', 'cidade', 'uf', 'manejo', 'certificacao', 'selo', 'imagem', 'status', 'user_id', 'fair_id'
     ];
 
     public function user()
@@ -25,6 +25,7 @@ class Marketer extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'marketer_product');
+        return $this->hasMany(Product::class);
     }
+
 }

@@ -10,16 +10,16 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome', 'imagem', 'quantidade', 'unidade', 'preco', 'meses', 'marketer_id', 'product_id'
+        'nome', 'imagem', 'quantidade', 'unidade', 'preco', 'meses', 'status', 'marketer_id', 'category_id'
     ];
 
-    public function marketers()
+    public function category()
     {
-        return $this->belongsToMany(Marketer::class, 'marketer_product');
+        return $this->belongsTo(Category::class);
     }
 
-    public function categories()
+    public function marketer()
     {
-        return $this->belongsToMany(Category::class, 'category_product');
+        return $this->belongsTo(Marketer::class);
     }
 }

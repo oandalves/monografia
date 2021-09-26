@@ -23,12 +23,13 @@ class CreateFairsTable extends Migration
             $table->string('periodicidade');
             $table->string('latitude');
             $table->string('longitude');
-            $table->string('local');
+            $table->string('address');
             $table->string('cidade');
             $table->string('uf');
             $table->string('telefone');
             $table->string('email');
             $table->string('link');
+            $table->string('status');
             $table->integer('user_id')
                 ->unsigned();
             $table->foreign('user_id')

@@ -24,6 +24,7 @@ class CreateMarketersTable extends Migration
             $table->string('manejo');
             $table->string('certificacao');
             $table->string('selo');
+            $table->string('status');
             $table->integer('user_id')
                 ->unsigned();
             $table->foreign('user_id')
