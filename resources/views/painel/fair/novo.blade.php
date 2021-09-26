@@ -149,6 +149,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="address">Endereço</label>
+                                    <input type="text" class="form-control map-input {{ $errors->has('address') ? 'is-invalid' : '' }}" placeholder="Insira o endereço do local onde a feira é realizada" name="address" id="address" value="{{ old('address') }}">
+                                    <input type="hidden" name="latitude" id="address-latitude" value="{{ old('latitude') ?? '0' }}"/>
+                                    <input type="hidden" name="longitude" id="address-longitude" value="{{ old('longitude') ?? '0' }}"/>
+                                    @if($errors->has('address'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('address') }}
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div id="address-map-container" class="mb-2" style="width:100%;height:400px;">
+                                <div style="width: 100%; height: 100%" id="address-map"></div>
+                            </div>
                             <x-adminlte-button class="btn-flat" type="submit" label="Salvar" theme="success" icon="fas fa-lg fa-save" />
                         </div>
                     </form>
@@ -156,4 +172,8 @@
             </div>
         </div>
 </section>
+<script src="{{ asset('assets/js/mapInput.js') }}"></script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places&callback=initialize&language=en&region=GB">
+</script>
 @stop
