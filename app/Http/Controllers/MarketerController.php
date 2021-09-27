@@ -16,13 +16,17 @@ class MarketerController extends Controller
     }
 
     public function create() {
-        $users = User::get();
+        $users = User::where('type', 'marketer')->get();
         $fairs = Fair::get();
         return view('painel.marketer.novo', compact('users', 'fairs'));
     }
 
     public function store(Request $request) {
-        Marketer::create($request->all());
-        return redirect()->route('painel.feirantes.index');
+        //dd($request->all());
+        $data = $request->all();
+        Marketer::create($data);
+        return redirect()
+            ->route('painel.feirantes.index')
+            ->with('message', 'Feirante cadastrado com sucesso.');
     }
 }

@@ -10,7 +10,7 @@ class Marketer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'telefone', 'sexo', 'local', 'cidade', 'uf', 'manejo', 'certificacao', 'selo', 'imagem', 'status', 'user_id', 'fair_id'
+        'telefone', 'sexo', 'local', 'cidade', 'uf', 'manejo', 'certificacao', 'selo', 'status', 'user_id', 'fair_id'
     ];
 
     public function user()

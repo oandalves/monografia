@@ -15,7 +15,6 @@ class CreateMarketersTable extends Migration
     {
         Schema::create('marketers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('imagem');
             $table->string('telefone');
             $table->string('sexo');
             $table->string('local');

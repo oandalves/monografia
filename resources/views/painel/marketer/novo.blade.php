@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card card-info">
                     <div class="card-header">
                         <h3 class="card-title">Cadastrar novo feirante</h3>
                     </div>
@@ -146,6 +146,7 @@
                                         </select>
                                     </div>
                                 </div>
+                                <input type="hidden" name="status" value="0">
                             </div>
                             <x-adminlte-button class="btn-flat" type="submit" label="Salvar" theme="success" icon="fas fa-lg fa-save" />
                         </div>
