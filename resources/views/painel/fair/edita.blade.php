@@ -7,16 +7,11 @@
 @stop
 
 @section('content')
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card card-info">
                         <div class="card-header">
                             <h3 class="card-title">Cadastrar nova feira</h3>
                         </div>
@@ -76,25 +71,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Descrição</label>
-                                    <textarea id="descricao" name="descricao" name="descricao"
-                                        value="{{ $fair->descricao }}" required autocomplete="descricao"
-                                        autofocus></textarea>
-                                    <script>
-                                        $('#descricao').summernote({
-                                            placeholder: 'Insira o texto da feira agroecológica e orgânica',
-                                            tabsize: 2,
-                                            height: 120,
-                                            toolbar: [
-                                                ['style', ['style']],
-                                                ['font', ['bold', 'underline', 'clear']],
-                                                ['color', ['color']],
-                                                ['para', ['ul', 'ol', 'paragraph']],
-                                                ['table', ['table']],
-                                                ['insert', ['link', 'picture', 'video']],
-                                                ['view', ['fullscreen', 'codeview', 'help']]
-                                            ]
-                                        });
-                                    </script>
+                                    <textarea id="descricao" name="descricao" class="form-control" required
+                                      autocomplete="descricao" autofocus>{{ $fair->descricao }}</textarea>
                                 </div>
 
                                 <div class="row">
