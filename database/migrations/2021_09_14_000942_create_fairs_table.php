@@ -29,7 +29,7 @@ class CreateFairsTable extends Migration
             $table->string('telefone');
             $table->string('email');
             $table->string('link');
-            $table->string('status');
+            $table->string('status')->default(0);
             $table->integer('user_id')
                 ->unsigned();
             $table->foreign('user_id')

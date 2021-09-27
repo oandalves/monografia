@@ -12,7 +12,7 @@ class Fair extends Model
     protected $fillable = [
         'nome', 'imagem', 'descricao', 'dia', 'horario', 'periodicidade',
         'latitude', 'longitude', 'address', 'cidade', 'uf', 'telefone',
-        'email', 'link', 'status', 'user_id'
+        'email', 'link',  'user_id'
     ];
 
     public function user()
