@@ -50,7 +50,7 @@ return [
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'Organicum',
 
     /*
     |--------------------------------------------------------------------------
@@ -122,12 +122,12 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-info',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-olive  elevation-4',
+    'classes_sidebar' => 'sidebar-dark-info  elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-info navbar-dark',
     'classes_topnav_nav' => 'navbar-expand',
