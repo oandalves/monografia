@@ -7,11 +7,6 @@
 @stop
 
 @section('content')
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -35,15 +30,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Nome</label>
-                                    <input type="text" name="nome" class="form-control" placeholder="Nome" maxlength="255"
-                                        value="{{ old('nome') }}">
+                                    <input type="text" name="nome" class="form-control" placeholder="Nome"
+                                        maxlength="255">
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label>Dia da semana</label>
                                             <select class="custom-select rounded-0" name="dia">
-                                                <option value="{{ old('dia') }}"">Selecione</option>
+                                                <option>Selecione</option>
                                                 <option value="Segunda-feira">Segunda-feira</option>
                                                 <option value="Terça-feira">Terça-feira</option>
                                                 <option value="Quarta-feira">Quarta-feira</option>
@@ -57,15 +52,14 @@
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label>Horário</label>
-                                            <input type="text" class="form-control" name="horario" placeholder="Horário"
-                                                value="{{ old('horario') }}">
+                                            <input type="text" class="form-control" name="horario" placeholder="Horário">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group">
                                             <label>Periodicidade</label>
                                             <select class="custom-select rounded-0" name="periodicidade">
-                                                <option value="{{ old('periodicidade') }}"">Selecione</option>
+                                                <option>Selecione</option>
                                                 <option value="Semanalmente">Semanalmente</option>
                                                 <option value="Quinzenalmente">Quinzenalmente</option>
                                                 <option value="Mensalmente">Mensalmente</option>
@@ -75,26 +69,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Descrição</label>
-                                    <textarea id="descricao" name="descricao"
-                                        class="form-control @error('descricao') is-invalid @enderror" name="descricao"
-                                        value="{{ old('descricao') }}" required autocomplete="descricao"
-                                        autofocus></textarea>
-                                    <script>
-                                        $('#descricao').summernote({
-                                            placeholder: 'Insira o texto da feira agroecológica e orgânica',
-                                            tabsize: 2,
-                                            height: 120,
-                                            toolbar: [
-                                                ['style', ['style']],
-                                                ['font', ['bold', 'underline', 'clear']],
-                                                ['color', ['color']],
-                                                ['para', ['ul', 'ol', 'paragraph']],
-                                                ['table', ['table']],
-                                                ['insert', ['link', 'picture', 'video']],
-                                                ['view', ['fullscreen', 'codeview', 'help']]
-                                            ]
-                                        });
-                                    </script>
+                                    <textarea id="descricao" name="descricao" class="form-control" required
+                                        autocomplete="descricao" autofocus></textarea>
                                 </div>
 
                                 <div class="row">
@@ -102,21 +78,19 @@
                                         <div class="form-group">
                                             <label>Telefone</label>
                                             <input type="text" class="form-control" name="telefone"
-                                                placeholder="(XX)XXXX-XXXX" value="{{ old('telefone') }}">
+                                                placeholder="(XX)XXXX-XXXX">
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label>E-mail</label>
-                                            <input type="text" class="form-control" name="email" placeholder="E-mail"
-                                                value="{{ old('email') }}">
+                                            <input type="text" class="form-control" name="email" placeholder="E-mail">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Link externo</label>
-                                            <input type="text" class="form-control" name="link" placeholder="http://"
-                                                value="{{ old('link') }}">
+                                            <input type="text" class="form-control" name="link" placeholder="http://">
                                         </div>
                                     </div>
                                 </div>
@@ -124,22 +98,21 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <x-adminlte-input-file name="imagem" label="Imagem"
-                                                placeholder="Seleciona uma imagem" value="{{ old('imagem') }}/>
+                                                placeholder="Seleciona uma imagem" />
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label>Cidade</label>
-                                            <input type="text" class="form-control" name="cidade" placeholder="Cidade"
-                                                value="{{ old('cidade') }}">
+                                            <input type="text" class="form-control" name="cidade" placeholder="Cidade">
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="form-group">
                                             <label>UF</label>
                                             <select class="custom-select rounded-0" name="uf">
-                                                <option value="{{ old('uf') }}>Selecione</option>
-                                                <option value="AC">Acre</option>
+                                                <option>Selecione</option>
+                                                <option value=" AC">Acre</option>
                                                 <option value="AL">Alagoas</option>
                                                 <option value="AP">Amapá</option>
                                                 <option value="AM">Amazonas</option>
@@ -175,18 +148,11 @@
                                     <div class="form-group col-md-12">
                                         <label for="address">Endereço</label>
                                         <input type="text"
-                                            class="form-control map-input {{ $errors->has('address') ? 'is-invalid' : '' }}"
+                                            class="form-control map-input"
                                             placeholder="Insira o endereço do local onde a feira é realizada" name="address"
-                                            id="address" value="{{ old('address') }}">
-                                        <input type="hidden" name="latitude" id="address-latitude"
-                                            value="{{ old('latitude') ?? '0' }}" />
-                                        <input type="hidden" name="longitude" id="address-longitude"
-                                            value="{{ old('longitude') ?? '0' }}" />
-                                        @if ($errors->has('address'))
-                                            <div class="invalid-feedback">
-                                                {{ $errors->first('address') }}
-                                            </div>
-                                        @endif
+                                            id="address">
+                                        <input type="hidden" name="latitude" id="address-latitude" />
+                                        <input type="hidden" name="longitude" id="address-longitude" />
                                     </div>
                                 </div>
                                 <div id="address-map-container" class="mb-2" style="width:100%;height:400px;">
