@@ -3,7 +3,7 @@
 @section('title', 'Novo usuário')
 
 @section('content_header')
-    <h1>Novo usuário</h1>
+    <h1>Editar usuário</h1>
 @stop
 
 @section('content')
@@ -13,11 +13,11 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Cadastrar novo usuário</h3>
+                            <h3 class="card-title">Editar usuário</h3>
                         </div>
                         <auth-validation-errors class="mb-4" :errors="$errors" />
 
-                        <form action="{{ route('painel.usuarios.store') }}" method="post">
+                        <form action="" method="post">
                         @csrf
                             <div class="card-body">
                                 <div class="form-group">

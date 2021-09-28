@@ -36,8 +36,8 @@
                                         <td>{{ $marketer->cidade }}/{{ $marketer->uf }}</td>
                                         <td>{{ $marketer->fair->nome }}</td>
                                         <td>{{ $marketer->created_at}}</td>
-                                        <td><a href="" title="Visualizar"><i class="far fa-eye"></i></a>
-                                            <a href="" title="Editar"><i class="far fa-edit"></i></a>
+                                        <td><a href="{{ route('painel.feirantes.show', $marketer->id) }}" title="Visualizar"><i class="far fa-eye"></i></a>
+                                            <a href="{{ route('painel.feirantes.edit', $marketer->id) }}" title="Editar"><i class="far fa-edit"></i></a>
                                             <a href="" title="Excluir"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>

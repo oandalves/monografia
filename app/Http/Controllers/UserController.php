@@ -27,4 +27,14 @@ class UserController extends Controller
         ]);
         return redirect()->route('painel.usuarios.index');
     }
+
+    public function edit($id) {
+        $user = User::find($id);
+        return view('painel.user.edita', compact('user'));
+    }
+
+    public function show($id) {
+        $user = User::find($id);
+        return view('painel.user.visualiza', compact('user'));
+    }
 }

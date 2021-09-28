@@ -29,4 +29,14 @@ class MarketerController extends Controller
             ->route('painel.feirantes.index')
             ->with('message', 'Feirante cadastrado com sucesso.');
     }
+
+    public function edit($id) {
+        $marketer = Marketer::find($id);
+        return view('painel.marketer.edita', compact('marketer'));
+    }
+
+    public function show($id) {
+        $marketer = Marketer::find($id);
+        return view('painel.marketer.visualiza', compact('marketer'));
+    }
 }

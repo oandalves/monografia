@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/feiras', function () {
+    return view('feiras');
+})->name('feiras');
+
 Route::middleware(['auth'])->group(function() {
     Route::prefix('/painel')->group(function() {
         Route::name('painel.')->group(function() {

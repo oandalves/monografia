@@ -36,8 +36,8 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->type }}</td>
                                         <td>{{ $user->created_at }}</td>
-                                        <td><a href="" title="Visualizar"><i class="far fa-eye"></i></a>
-                                            <a href="" title="Editar"><i class="far fa-edit"></i></a>
+                                        <td><a href="{{ route('painel.usuarios.show', $user->id) }}" title="Visualizar"><i class="far fa-eye"></i></a>
+                                            <a href="{{ route('painel.usuarios.edit', $user->id) }}" title="Editar"><i class="far fa-edit"></i></a>
                                             <a href="" title="Excluir"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
