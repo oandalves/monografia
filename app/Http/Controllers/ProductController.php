@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Marketer;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -16,10 +18,12 @@ class ProductController extends Controller
 
     public function create() {
         $categories = Category::get();
-        return view('painel.product.novo', compact('categories'));
+        $marketers = Marketer::get();
+        return view('painel.product.novo', compact('categories', 'marketers'));
     }
 
     public function store(Request $request) {
+        //dd($request->all());
         Product::create($request->all());
         return redirect()->route('painel.produtos.index');
     }
