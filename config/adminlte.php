@@ -314,6 +314,22 @@ return [
                     'text' => 'Feiras',
                     'url'  => '#',
                 ],
+                [
+                    'text' => 'Feirantes',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Identificação de barracas',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Produtos',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Usuários',
+                    'url'  => '#',
+                ],
             ],
         ],
         [
