@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 
 Route::get('/feiras', function () {
-    return view('feiras');
+    return view('site.feiras');
 })->name('feiras');
 
 Route::middleware(['auth'])->group(function() {
