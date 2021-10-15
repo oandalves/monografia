@@ -306,6 +306,7 @@ return [
                 ],
             ],
         ],
+        /*
         [
             'text'    => 'Relatórios',
             'icon'    => 'fas fa-fw fa-chart-bar',
@@ -332,6 +333,7 @@ return [
                 ],
             ],
         ],
+        */
         [
             'text'        => 'Usuarios',
             'icon'        => 'fas fa-fw fa-users',

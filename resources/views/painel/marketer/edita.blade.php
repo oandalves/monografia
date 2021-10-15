@@ -3,7 +3,7 @@
 @section('title', 'Nova feira')
 
 @section('content_header')
-<h1>Novo feirante</h1>
+<h4><b>Editar feirante</b></h4>
 @stop
 
 @section('content')
@@ -12,21 +12,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-info">
-                    <div class="card-header">
-                        <h3 class="card-title">Cadastrar novo feirante</h3>
-                    </div>
                     <form action="{{ route('painel.feirantes.store') }}" method="post">
                         @csrf
                         <div class="card-body">
-                            <div class="form-group">
-                                <label>Escolha o usuário</label>
-                                <select class="custom-select rounded-0" name="user_id">
-                                    <option>Selecione</option>
-                                    @foreach($users as $user)
-                                        <option value="{{$user->id}}">{{$user->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
                             <div class="form-group">
                                 <label>Vincular a feira</label>
                                 <select class="custom-select rounded-0" name="fair_id">

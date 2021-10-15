@@ -3,7 +3,7 @@
 @section('title', 'Novo usuário')
 
 @section('content_header')
-    <h1>Editar usuário</h1>
+<h4><b>Editar usuário</b></h4>
 @stop
 
 @section('content')
@@ -12,9 +12,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">Editar usuário</h3>
-                        </div>
                         <auth-validation-errors class="mb-4" :errors="$errors" />
 
                         <form action="" method="post">
@@ -26,8 +23,6 @@
                                         <option>Selecione</option>
                                         <option value="admin">Administrador</option>
                                         <option value="fair">Responsável por gerenciar feira</option>
-                                        <option value="marketer">Feirante</option>
-                                        <option value="user">Usuário</option>
                                     </select>
                                 </div>
                             <div class="form-group">
