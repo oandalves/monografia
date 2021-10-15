@@ -23,10 +23,6 @@ class FairController extends Controller
     public function store(Request $request) {
         //dd($request->all());
         $data = $request->all();
-        if ($request->imagem->isValid()) {
-            $imagem = $request->imagem->store('fairs');
-            $data['imagem'] = $imagem;
-        }
         Fair::create($data);
         return redirect()
             ->route('painel.feiras.index')

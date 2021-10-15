@@ -20,6 +20,8 @@
                                     <input type="text" name="nome" class="form-control" placeholder="Nome" maxlength="255">
                                 </div>
                                 <x-adminlte-button class="btn-flat" type="submit" label="Salvar" theme="success" icon="fas fa-lg fa-save"/>
+                                <x-adminlte-button class="btn-flat" type="return" label="Cancelar" theme="danger"
+                                    icon="fas fa-lg fa-exit" />
                             </div>
                         </form>
                     </div>

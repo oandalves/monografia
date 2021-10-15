@@ -15,7 +15,6 @@ class CreateFairsTable extends Migration
     {
         Schema::create('fairs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('imagem');
             $table->string('nome');
             $table->text('descricao');
             $table->string('dia');
@@ -24,12 +23,6 @@ class CreateFairsTable extends Migration
             $table->string('latitude');
             $table->string('longitude');
             $table->string('address');
-            $table->string('cidade');
-            $table->string('uf');
-            $table->string('telefone');
-            $table->string('email');
-            $table->string('link');
-            $table->string('status')->default(0);
             $table->integer('user_id')
                 ->unsigned();
             $table->foreign('user_id')

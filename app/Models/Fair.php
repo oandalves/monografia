@@ -10,9 +10,8 @@ class Fair extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome', 'imagem', 'descricao', 'dia', 'horario', 'periodicidade',
-        'latitude', 'longitude', 'address', 'cidade', 'uf', 'telefone',
-        'email', 'link',  'user_id'
+        'nome',  'descricao', 'dia', 'horario', 'periodicidade',
+        'latitude', 'longitude', 'address', 'user_id'
     ];
 
     public function user()

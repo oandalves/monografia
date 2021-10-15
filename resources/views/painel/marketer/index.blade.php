@@ -14,6 +14,20 @@
                 <div class="card card-info">
                     <!-- /.card-header -->
                     <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-2"><x-adminlte-button class="btn-flat" type="return" label="Download" theme="info"
+                                icon="fas fa-lg fa-download" /></div>
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-4">
+                                <form action="">
+                                    @csrf
+                                    <div class="form-group">
+                                        <input type="search" name="" id="" placeholder="Pesquisar"
+                                            class="form-control">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>

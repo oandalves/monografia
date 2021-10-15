@@ -21,6 +21,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <x-adminlte-button class="btn-flat" type="print" label="Imprimir" theme="success"
+                                        icon="fas fa-lg fa-print" />
+                                    <x-adminlte-button class="btn-flat" type="return" label="Voltar" theme="info"
+                                        icon="fas fa-lg fa-back" />
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 @section('title', 'Feiras')
 
 @section('content_header')
-    <h1>Feiras</h1>
+    <h4><b>Listagem de feiras</b></h4>
 @stop
 
 @section('content')
@@ -12,9 +12,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">Listagem todas as feiras</h3>
-                        </div>
                         @if (session('message'))
                             <div id="toastsContainerTopRight" class="toasts-top-right fixed">
                                 <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
@@ -28,14 +25,27 @@
                         @endif
                         <!-- /.card-header -->
                         <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-2"><x-adminlte-button class="btn-flat" type="return" label="Download" theme="info"
+                                    icon="fas fa-lg fa-download" /></div>
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-4">
+                                    <form action="">
+                                        @csrf
+                                        <div class="form-group">
+                                            <input type="search" name="" id="" placeholder="Pesquisar"
+                                                class="form-control">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
                                         <th>Nome</th>
                                         <th>Responsável</th>
-                                        <th>Cidade/UF</th>
-                                        <th>Data/Hora cadastro</th>
+                                        <th>Endereço</th>
                                         <th>Ação</th>
                                     </tr>
                                 </thead>
@@ -45,12 +55,14 @@
                                             <td>{{ $fair->id }}.</td>
                                             <td>{{ $fair->nome }}</td>
                                             <td>{{ $fair->user->name }}</td>
-                                            <td>{{ $fair->cidade }}/{{ $fair->uf }}</td>
-                                            <td>{{ $fair->created_at }}</td>
+                                            <td>{{ $fair->address }}</td>
                                             <td><a href="{{ route('painel.feiras.show', $fair->id) }}"
                                                     title="Visualizar"><i class="far fa-eye"></i></a>
                                                 <a href="{{ route('painel.feiras.edit', $fair->id) }}" title="Editar"><i
                                                         class="far fa-edit"></i></a>
+                                                <a href="" title="Excluir"><i
+                                                            class="far fa-trash-alt"></i></a>
+                                                        <!--
                                                 <form action="{{ route('painel.feiras.destroy', $fair->id) }}"
                                                     method="POST">
                                                     @csrf
@@ -58,6 +70,7 @@
                                                     <button type="submit" title="Excluir" class="toastsDefaultSuccess"><i
                                                             class="far fa-trash-alt"></i></button>
                                                 </form>
+                                            -->
                                             </td>
                                         </tr>
                                     @endforeach

@@ -98,6 +98,14 @@ Route::middleware(['auth'])->group(function() {
     });
 });
 
+Route::get('/gerenciar-feira', function () {
+    return view('feira.index');
+});
+
+Route::get('/gerenciar-feira/editar', function () {
+    return view('feira.editar');
+});
+
 
 
 require __DIR__.'/auth.php';

@@ -3,7 +3,7 @@
 @section('title', 'Visualiza feira')
 
 @section('content_header')
-    <h1>Visualizar Feira</h1>
+<h4><b>Visualizar feira</b></h4>
 @stop
 
 @section('content')
@@ -17,14 +17,7 @@
                                 <div class="col-md-3">
                                     <!-- Profile Image -->
                                     <div class="card card-info">
-                                        <div class="card-header">
-                                            <h3 class="card-title">Gestor(a) da feira</h3>
-                                        </div>
                                         <div class="card-body box-profile">
-                                            <div class="text-center">
-                                                <img class="profile-user-img img-fluid img-circle"
-                                                    src="{{ url("storage/$fair->imagem") }}" alt="{{ $fair->nome }}">
-                                            </div>
 
                                             <h3 class="profile-username text-center">{{ $fair->user->name }}</h3>
 
@@ -43,9 +36,6 @@
                                 </div>
                                 <div class="col-md-9">
                                     <div class="card card-info">
-                                        <div class="card-header">
-                                            <h3 class="card-title">Informações sobre a feira</h3>
-                                        </div>
                                         <!-- /.card-header -->
                                         <div class="card-body">
                                             <strong><i class="fas fa-book mr-1"></i> Sobre</strong>
@@ -82,6 +72,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <x-adminlte-button class="btn-flat" type="print" label="Imprimir" theme="success"
+                                        icon="fas fa-lg fa-print" />
+                                    <x-adminlte-button class="btn-flat" type="return" label="Voltar" theme="info"
+                                        icon="fas fa-lg fa-back" />
                         </div>
                     </div>
                 </div>

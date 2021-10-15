@@ -3,7 +3,7 @@
 @section('title', 'Nova feira')
 
 @section('content_header')
-    <h1>Nova feira</h1>
+<h4><b>Editar feira</b></h4>
 @stop
 
 @section('content')
@@ -12,9 +12,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">Cadastrar nova feira</h3>
-                        </div>
+                        
+                        
                         <form action="{{ route('painel.feiras.update', $fair->id) }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
@@ -172,6 +171,8 @@
                                     </div>
                                     <x-adminlte-button class="btn-flat" type="submit" label="Salvar" theme="success"
                                         icon="fas fa-lg fa-save" />
+                                        <x-adminlte-button class="btn-flat" type="return" label="Cancelar" theme="danger"
+                                    icon="fas fa-lg fa-exit" />
                                 </div>
                             </div>
                         </form>
