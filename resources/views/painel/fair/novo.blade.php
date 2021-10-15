@@ -12,9 +12,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-info">
-                        <div class="card-header">
+                        {{-- <div class="card-header">
                             <h3 class="card-title">Cadastrar nova feira</h3>
-                        </div>
+                        </div> --}}
                         <form action="{{ route('painel.feiras.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
