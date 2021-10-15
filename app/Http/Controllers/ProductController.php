@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Marketer;
+use App\Models\Fair;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,8 +18,8 @@ class ProductController extends Controller
 
     public function create() {
         $categories = Category::get();
-        $marketers = Marketer::get();
-        return view('painel.product.novo', compact('categories', 'marketers'));
+        $fairs = Fair::get();
+        return view('painel.product.novo', compact('categories', 'fairs'));
     }
 
     public function store(Request $request) {

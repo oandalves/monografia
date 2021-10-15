@@ -3,7 +3,7 @@
 @section('title', 'Visualiza usuário')
 
 @section('content_header')
-    <h1>Visualizar usuário</h1>
+<h4><b>Visualizar usuário</b></h4>
 @stop
 
 @section('content')
@@ -17,8 +17,7 @@
                                 <!-- Profile Image -->
                                 <div class="">
                                     <div class="">
-                                        <h3 class="">Nome: {{ $user->name }}</h3>
-                                        <p class="">Email: {{ $user->email }} <br>Tipo de usuário: {{ $user->type }} </p>
+                                        <p class="">Nome: {{ $user->name }}<br>Email: {{ $user->email }} <br>Tipo de usuário: {{ $user->type }} </p>
                                     </div>
                                 </div>
                             </div>

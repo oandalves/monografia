@@ -12,9 +12,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">Cadastrar nova feira</h3>
-                        </div>
+
                         <form action="{{ route('painel.feiras.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
@@ -30,8 +28,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Nome</label>
-                                    <input type="text" name="nome" class="form-control" placeholder="Nome"
-                                        maxlength="255">
+                                    <input type="text" name="nome" class="form-control" placeholder="Nome" maxlength="255">
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-4">
@@ -147,8 +144,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
                                         <label for="address">Endereço</label>
-                                        <input type="text"
-                                            class="form-control map-input"
+                                        <input type="text" class="form-control map-input"
                                             placeholder="Insira o endereço do local onde a feira é realizada" name="address"
                                             id="address">
                                         <input type="hidden" name="latitude" id="address-latitude" />
@@ -161,8 +157,8 @@
                                 <x-adminlte-button class="btn-flat" type="submit" label="Salvar" theme="success"
                                     icon="fas fa-lg fa-save" />
                             </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
