@@ -106,6 +106,11 @@ Route::get('/gerenciar-feira/editar', function () {
     return view('feira.editar');
 });
 
+Route::prefix('/gerenciamento-feira')->group(function() {
+    Route::name('feira.')->group(function() {
+    });
+});
+
 
 
 require __DIR__.'/auth.php';

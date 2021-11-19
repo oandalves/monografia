@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Visualiza feira')
+@section('title', 'Visualiza feirante')
 
 @section('content_header')
-<h4><b>Visualizar feira</b></h4>
+<h4><b>Visualizar feirante</b></h4>
 @stop
 
 @section('content')
@@ -19,16 +19,13 @@
                                     <div class="card card-info">
                                         <div class="card-body box-profile">
 
-                                            <h3 class="profile-username text-center">{{ $fair->user->name }}</h3>
+                                            <h3 class="profile-username text-center">{{ $marketer->nome }}</h3>
 
-                                            <p class="text-muted text-center">{{ $fair->user->email }}</p>
+                                            <p class="text-muted text-center">{{ $marketer->nome }}</p>
 
                                             <ul class="list-group list-group-unbordered mb-3">
                                                 <li class="list-group-item">
-                                                    <b>Feirantes Vinculados</b> <a class="float-right">22</a>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <b>Produtos cadastrados</b> <a class="float-right">543</a>
+                                                    <b>Associado a feira</b> <a class="float-right">{{ $marketer->fair->nome}}</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -41,25 +38,29 @@
                                             <strong><i class="fas fa-book mr-1"></i> Sobre</strong>
 
                                             <p class="text-muted">
-                                                <strong>Nome: </strong>{{ $fair->nome }}<br>
-                                                <strong>Dia da semana: </strong>{{ $fair->dia }}<br>
-                                                <strong>Horário: </strong>{{ $fair->horario }}<br>
-                                                <strong>Periodicidade: </strong>{{ $fair->periodicidade }}<br>
+                                                <strong>Nome: </strong>{{ $marketer->nome }}<br>
+                                                <strong>Telefone: </strong>{{ $marketer->telefone }}<br>
+                                                <strong>Sexo: </strong>{{ $marketer->sexo }}<br>
                                             </p>
 
                                             <hr>
 
                                             <strong><i class="fas fa-map-marker-alt mr-1"></i> Localização</strong>
 
-                                            <p class="text-muted">{{ $fair->address }}</p>
+                                            <p class="text-muted">{{ $marketer->local }} - {{ $marketer->cidade }} - {{ $marketer->uf }}</p>
 
                                             <hr>
 
                                             
 
-                                            <strong><i class="far fa-file-alt mr-1"></i> Descrição</strong>
+                                            <strong><i class="far fa-file-alt mr-1"></i> Informações importantes</strong>
 
-                                            <p class="text-muted">{{ $fair->descricao }}</p>
+                                            <p class="text-muted">
+                                                <strong>Tipo: </strong>{{ $marketer->tipo }}<br>
+                                                <strong>Possui SIPAF: </strong>{{ $marketer->selo }}<br>
+                                                <strong>Forma de manejo: </strong>{{ $marketer->manejo }}<br>
+                                                <strong>Tipo de certificação: </strong>{{ $marketer->certificacao }}<br>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

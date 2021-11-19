@@ -1,5 +1,5 @@
 @extends('feira.template.layout')
 
 @section('content')
-    teste
+    {{$fair->nome}}
 @endsection

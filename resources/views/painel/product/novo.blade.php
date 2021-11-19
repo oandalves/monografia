@@ -20,14 +20,14 @@
                                     <select class="custom-select rounded-0" name="fair_id">
                                         <option>Selecione</option>
                                         @foreach ($fairs as $fair)
-                                            <option value="{{ $fair->id }}">{{ $fair->name }}</option>
+                                            <option value="{{ $fair->id }}">{{ $fair->nome }}</option>
                                         @endforeach
 
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Categoria</label>
-                                    <select class="custom-select rounded-0" name="categoria_id">
+                                    <select class="custom-select rounded-0" name="category_id">
                                         <option>Selecione</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->nome }}</option>

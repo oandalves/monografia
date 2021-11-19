@@ -43,7 +43,7 @@
                                     @foreach($marketers as $marketer)
                                     <tr>
                                         <td>{{ $marketer->id }}.</td>
-                                        <td>{{ $marketer->user->name }}</td>
+                                        <td>{{ $marketer->nome }}</td>
                                         <td>{{ $marketer->cidade }}/{{ $marketer->uf }}</td>
                                         <td>{{ $marketer->fair->nome }}</td>
                                         <td>{{ $marketer->created_at}}</td>

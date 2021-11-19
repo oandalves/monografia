@@ -33,6 +33,7 @@
                                     <th style="width: 10px">#</th>
                                     <th>Nome</th>
                                     <th>Categoria</th>
+                                    <th>Feira</th>
                                     <th>Ação</th>
                                 </tr>
                             </thead>
@@ -41,7 +42,8 @@
                                     <tr>
                                         <td>{{ $products->id }}.</td>
                                         <td>{{ $products->nome }}</td>
-                                        <td>{{ $products->created_at }}</td>
+                                        <td>{{ $products->category->nome }}</td>
+                                        <td>{{ $products->fair->nome }}</td>
                                         <td><a href="" title="Visualizar"><i class="far fa-eye"></i></a>
                                             <a href="" title="Editar"><i class="far fa-edit"></i></a>
                                             <a href="" title="Excluir"><i class="far fa-trash-alt"></i></a>
